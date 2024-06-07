@@ -1,5 +1,5 @@
 // A program to print the address of www.google.com
-package unit2;
+
 import java.net.*;
 public class IpByDomain {
     public static void main(String[] args) {
