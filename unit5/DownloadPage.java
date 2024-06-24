@@ -14,7 +14,7 @@ public class DownloadPage {
             while ((ch = in.read()) != -1) {
                 System.out.print((char)ch);
             }
-            System.out.println();
+            System.out.println( );
         } catch (MalformedURLException e) {
             System.out.println(e.getMessage());
         } catch (URISyntaxException ex1) {
