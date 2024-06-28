@@ -11,7 +11,7 @@ public class HeaderByid {
             URL url = uri.toURL();
             URLConnection conn = url.openConnection();
             while (true) {
-                String header = conn.getHeaderField(i);
+                String header = conn.getHeaderField(i); 
                 if (header == null) {
                     break;
                 }
