@@ -1,9 +1,9 @@
-// check if read opertion is allowed using getDoinput method
+// check if read opertion is allowed using getDooutput method
 
 import java.io.IOException;
 import java.net.*;
 
-public class CheckDoinput {
+public class CheckDoOutput {
 
     public static void main(String[] args) {
 
@@ -11,10 +11,10 @@ public class CheckDoinput {
             URI uri = new URI("https://en.wikipedia.org/wiki/Computer");
             URL url = uri.toURL();
             URLConnection conn = url.openConnection();
-            if (conn.getDoInput()) {
-                System.out.println("Read opration is allowed");
+            if (conn.getDoOutput()) {
+                System.out.println("write opration is allowed");
             } else {
-                System.out.println("Read operation is not allowed");
+                System.out.println("write operation is not allowed");
                 conn.setAllowUserInteraction(true);
             }
             if (conn.getAllowUserInteraction()) {
