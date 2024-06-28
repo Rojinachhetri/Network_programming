@@ -1,9 +1,9 @@
-//print url to configure conncetion
+// check if user interaction ia allowed or not
 
 import java.io.IOException;
 import java.net.*;
 
-public class geturl {
+public class userInteraction {
 
     public static void main(String[] args) {
 
@@ -11,8 +11,16 @@ public class geturl {
             URI uri = new URI("https://en.wikipedia.org/wiki/Computer");
             URL url = uri.toURL();
             URLConnection conn = url.openConnection();
-            System.out.println("configured URL:" + conn.getURL().toString());
-
+            if (conn.getAllowUserInteraction()) {
+                System.out.println("user interaction is allowed");
+            } else {
+                System.out.println("not allowed");
+                conn.setAllowUserInteraction(true);
+            }
+            if (conn.getAllowUserInteraction()) {
+                System.out.println("user interaction is allowed");
+            }
+        
         } catch (URISyntaxException e) {
             System.out.println(e.getMessage());
 
@@ -25,3 +33,4 @@ public class geturl {
         }
     }
 }
+

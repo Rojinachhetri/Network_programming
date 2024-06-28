@@ -1,17 +1,16 @@
-//print url to configure conncetion
-
 import java.io.IOException;
 import java.net.*;
-
-public class geturl {
-
+public class IsConnected {
     public static void main(String[] args) {
 
         try {
             URI uri = new URI("https://en.wikipedia.org/wiki/Computer");
             URL url = uri.toURL();
             URLConnection conn = url.openConnection();
-            System.out.println("configured URL:" + conn.getURL().toString());
+             
+          conn.connect();
+          System.out.println("configured URL:" + conn.getURL().toString());
+
 
         } catch (URISyntaxException e) {
             System.out.println(e.getMessage());
@@ -25,3 +24,6 @@ public class geturl {
         }
     }
 }
+
+    
+
