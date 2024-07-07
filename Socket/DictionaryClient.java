@@ -10,12 +10,13 @@ import java.net.Socket;
 public class DictionaryClient {
     public static void main(String[] args) {
         int ch;
+        String [] words = { "gold", "flower","cat","dog"};
         try {
             Socket socket = new Socket("dict.org", 2628);
             OutputStream out = socket.getOutputStream();
             Writer writer = new OutputStreamWriter(out, "UTF-8");
             writer = new BufferedWriter(writer);
-            writer.write("SHOW DB\r\n");
+            writer.write("DEFINE fd-eng-lat gold\r\n");
             writer.flush();
 
             InputStream in = socket.getInputStream();
